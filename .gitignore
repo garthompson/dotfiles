@@ -1,0 +1,29 @@
+# Backups directory - contains timestamped backups before changes
+backups/
+
+# Machine-specific secrets and environment variables
+machines/*/.env.zsh
+machines/*/secrets/
+*.local.secret
+
+# Template rendering - actual files generated from templates
+variables.env
+
+# Homebrew lock file - generated during bundle operations
+Brewfile.lock.json
+
+# macOS system files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Temporary files
+tmp/
+temp/
+
+# Git-ignored actual configs (generated from templates)
+# These are generated during setup and should not be committed
+git/.gitconfig
+ssh/.ssh/config
+nvim/.config/nvim/init.vim

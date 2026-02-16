@@ -1,0 +1,13 @@
+# Machine-specific zsh configuration
+# Copy this to ~/.config/zsh/local.zsh or symlink from machines/HOSTNAME/.zshrc.local
+#
+# This file is sourced at the end of .zshrc
+
+# Example: Machine-specific aliases
+# alias work-vpn='connect-to-work-vpn'
+
+# Example: Machine-specific PATH additions
+# export PATH="$HOME/work-tools/bin:$PATH"
+
+# Example: Machine-specific environment
+# export WORK_PROJECT_DIR=~/workspace

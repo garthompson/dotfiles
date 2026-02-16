@@ -1,0 +1,26 @@
+[user]
+    name = {{GIT_NAME}}
+    email = {{GIT_EMAIL}}
+
+[core]
+    excludesfile = ~/.config/git/ignore
+    autocrlf = input
+    editor = vim
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = true
+
+[push]
+    autoSetupRemote = true
+
+[diff]
+    colorMoved = default
+
+[merge]
+    conflictstyle = diff3
+
+[include]
+    path = ~/.gitconfig.local
