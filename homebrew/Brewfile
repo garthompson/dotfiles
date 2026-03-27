@@ -1,0 +1,70 @@
+tap "aws/tap"
+tap "common-fate/granted"
+tap "hashicorp/tap"
+tap "manaflow-ai/cmux"
+
+# CLI tools
+brew "coreutils"
+brew "gh"
+brew "jq"
+brew "lazygit"
+brew "neovim"
+brew "stow"
+brew "yq"
+
+# Cloud & infrastructure
+brew "aws-sam-cli"
+brew "cloudflared"
+brew "common-fate/granted/granted"
+brew "hashicorp/tap/packer"
+
+# Databases & messaging
+brew "libpq"
+brew "mysql-client"
+
+# Python
+brew "pipx"
+brew "poetry"
+brew "python@3.11"
+
+# Libraries
+brew "ffmpeg"
+brew "libxmlsec1"
+brew "tcl-tk"
+
+# Browser automation
+brew "agent-browser"
+
+# Applications
+cask "claude-code"
+cask "cmux"
+cask "font-hack-nerd-font"
+cask "gimp"
+
+# VS Code extensions
+vscode "equinusocio.vsc-community-material-theme"
+vscode "equinusocio.vsc-material-theme"
+vscode "equinusocio.vsc-material-theme-icons"
+vscode "github.vscode-pull-request-github"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode.makefile-tools"
+vscode "octref.vetur"
+vscode "pkief.material-icon-theme"
+vscode "redhat.fabric8-analytics"
+vscode "redhat.java"
+vscode "redhat.vscode-xml"
+vscode "terrastruct.d2"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-maven"
