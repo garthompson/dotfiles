@@ -1,0 +1,3 @@
+# Create directory and cd into it
+function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
+compdef _directories md
