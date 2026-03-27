@@ -1,0 +1,74 @@
+{
+  "commands": [
+    {
+      "name": "Dev Workspace",
+      "description": "Claude + Terminal | Browser + Lazygit layout",
+      "keywords": ["dev", "workspace", "lazygit", "browser", "claude"],
+      "restart": "confirm",
+      "workspace": {
+        "cwd": ".",
+        "layout": {
+          "direction": "horizontal",
+          "split": 0.5,
+          "children": [
+            {
+              "direction": "vertical",
+              "split": 0.75,
+              "children": [
+                {
+                  "pane": {
+                    "surfaces": [
+                      {
+                        "type": "terminal",
+                        "name": "Claude",
+                        "command": "claude",
+                        "focus": true
+                      }
+                    ]
+                  }
+                },
+                {
+                  "pane": {
+                    "surfaces": [
+                      {
+                        "type": "terminal",
+                        "name": "Terminal"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "direction": "vertical",
+              "split": 0.5,
+              "children": [
+                {
+                  "pane": {
+                    "surfaces": [
+                      {
+                        "type": "browser",
+                        "name": "Browser"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "pane": {
+                    "surfaces": [
+                      {
+                        "type": "terminal",
+                        "name": "Lazygit",
+                        "command": "lazygit"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
