@@ -43,10 +43,10 @@ echo "  Key repeat rate set to 2, initial delay set to 15"
 # --- Trackpad ---
 echo ""
 echo "--- Trackpad preferences ---"
-defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-echo "  Tap to click enabled"
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool false
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool false
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 0
+echo "  Tap to click disabled"
 
 # --- General UI ---
 echo ""
@@ -84,7 +84,7 @@ echo "  - Dock: auto-hide, tile size 40, scale effect, no recent apps"
 echo "  - Finder: show extensions/hidden files, path bar, status bar, list view"
 echo "  - Screenshots: ~/Desktop, png, no shadow"
 echo "  - Keyboard: fast key repeat"
-echo "  - Trackpad: tap to click"
+echo "  - Trackpad: tap to click disabled"
 echo "  - General: expanded save/print panels"
 echo "  - Security: immediate password on sleep"
 echo ""
