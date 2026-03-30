@@ -1,0 +1,48 @@
+# Ghostty config — equivalent to iTerm2 GT-work profile
+
+# Font
+font-family = MesloLGS NF
+font-size = 15
+
+# Theme (Solarized Dark)
+theme = iTerm2 Solarized Dark
+# Override palette 8 to match iTerm2 profile (theme has #335e69)
+palette = 8=#002b36
+
+# Bold text uses bright color variants
+bold-is-bright = true
+
+# Background opacity (iTerm2 transparency = 0.106)
+background-opacity = 0.89
+
+# Cursor
+cursor-style-blink = false
+
+# Window size
+window-height = 25
+window-width = 80
+
+# macOS option key as alt (required for alt+arrow keybindings)
+macos-option-as-alt = true
+
+# Keybindings (matching iTerm2 profile)
+keybind = cmd+left=text:\x01
+keybind = cmd+right=text:\x05
+keybind = alt+left=text:\x1bb
+keybind = alt+right=text:\x1bf
+keybind = alt+backspace=text:\x1b\x7f
+keybind = cmd+backspace=text:\x15
+keybind = delete=text:\x04
+keybind = alt+delete=text:\x1bd
+
+# Copy selected text to clipboard automatically
+copy-on-select = true
+
+# Split styling
+unfocused-split-opacity = 0.7
+unfocused-split-fill = #1e1e2e
+split-divider-color = #45475a
+
+# Optional — uncomment if desired
+# quit-after-last-window-closed = true
+# term = xterm-256color

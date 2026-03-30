@@ -3,51 +3,64 @@ tap "common-fate/granted"
 tap "hashicorp/tap"
 tap "manaflow-ai/cmux"
 
-# CLI tools
+# Browser automation CLI for AI agents
+brew "agent-browser"
+# CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM
+brew "aws-sam-cli"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
+# The easiest way to access your cloud.
+brew "common-fate/granted/granted"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# GitHub command-line tool
 brew "gh"
+# Packer
+brew "hashicorp/tap/packer"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
+# Simple terminal UI for git commands
 brew "lazygit"
+# Postgres C API library
+brew "libpq"
+# XML security library
+brew "libxmlsec1"
+# Open source relational database management system
+brew "mysql-client"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Python package management tool
+brew "poetry"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 
-# Cloud & infrastructure
-brew "aws-sam-cli"
-brew "cloudflared"
-brew "common-fate/granted/granted"
-brew "hashicorp/tap/packer"
-
-# Databases & messaging
-brew "libpq"
-brew "mysql-client"
-
-# Python
-brew "pipx"
-brew "poetry"
-brew "python@3.11"
-
-# Libraries
-brew "ffmpeg"
-brew "libxmlsec1"
-brew "tcl-tk"
-
-# Browser automation
-brew "agent-browser"
-
-# Applications
+# Terminal-based AI coding assistant
 cask "claude-code"
+# Ghostty-based terminal with vertical tabs and notifications for AI coding agents
 cask "cmux"
 cask "font-hack-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Free and open-source image editor
 cask "gimp"
 
-# VS Code extensions
 vscode "equinusocio.vsc-community-material-theme"
 vscode "equinusocio.vsc-material-theme"
 vscode "equinusocio.vsc-material-theme-icons"
 vscode "github.vscode-pull-request-github"
 vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.black-formatter"
 vscode "ms-python.debugpy"
+vscode "ms-python.flake8"
+vscode "ms-python.isort"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
 vscode "ms-toolsai.jupyter"

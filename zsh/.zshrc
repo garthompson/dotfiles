@@ -112,5 +112,8 @@ setopt glob_dots     # no special treatment for file names with a leading dot
 setopt no_auto_menu  # require an extra TAB press to open the completion menu
 setopt hist_ignore_all_dups  # remove previous commands that are duplicates from history
 
+# Rust/Cargo
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
+
 # Activate Python venv "work"
 source ~/venvs/work/bin/activate
