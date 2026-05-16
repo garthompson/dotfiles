@@ -320,6 +320,52 @@ install_zsh() {
     warn "Open a NEW terminal window to test your Zsh configuration."
 }
 
+install_cmux() {
+    info "Setting up cmux..."
+    "$SCRIPT_DIR/stow-link.sh" cmux link || return 1
+    if check_command cmux; then
+        success "cmux: $(cmux --version 2>/dev/null | head -1 || echo installed)"
+    else
+        warn "cmux command not found on PATH. Install with: brew install cmux"
+    fi
+}
+
+install_ghostty() {
+    info "Setting up Ghostty..."
+    "$SCRIPT_DIR/stow-link.sh" ghostty link || return 1
+    if [[ -d "/Applications/Ghostty.app" ]]; then
+        success "Ghostty config linked."
+    else
+        warn "Ghostty.app not found in /Applications. Install from https://ghostty.org/"
+    fi
+}
+
+install_homebrew_config() {
+    info "Setting up Homebrew shell wrapper (brew.zsh function + Brewfile symlink)..."
+    "$SCRIPT_DIR/stow-link.sh" homebrew link || return 1
+    success "Homebrew config linked. The brew wrapper will auto-update Brewfile on install/uninstall."
+}
+
+install_iterm2() {
+    info "Setting up iTerm2..."
+    if [[ ! -d "/Applications/iTerm.app" ]]; then
+        warn "iTerm.app not found in /Applications. Install from https://iterm2.com/ first."
+    fi
+    cat <<EOF
+
+  iTerm2 reads preferences from a custom folder (not from ~/.config).
+  To finish setup:
+    1. Open iTerm2.
+    2. Settings > General > Preferences.
+    3. Check "Load preferences from a custom folder or URL".
+    4. Set the path to: $DOTFILES_DIR/iterm2/.config/iterm2/
+    5. Optionally check "Save changes to folder when iTerm2 quits".
+    6. Restart iTerm2.
+
+EOF
+    success "iTerm2 setup instructions displayed."
+}
+
 install_brew_packages() {
     info "Checking Homebrew package differences..."
     "$SCRIPT_DIR/brew-sync.sh" diff || true
@@ -480,6 +526,10 @@ main() {
         "python:install_python:Python configuration"
         "vscode:install_vscode:VS Code configuration"
         "zsh:install_zsh:Zsh shell configuration (test in new terminal)"
+        "cmux:install_cmux:cmux multiplexer configuration"
+        "ghostty:install_ghostty:Ghostty terminal configuration"
+        "homebrew:install_homebrew_config:Homebrew shell wrapper (brew.zsh + Brewfile symlink)"
+        "iterm2:install_iterm2:iTerm2 preferences (manual prefs step required)"
     )
 
     for entry in "${components[@]}"; do

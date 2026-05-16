@@ -26,9 +26,12 @@ See [INSTALLATION.md](INSTALLATION.md) for the full setup guide.
 | `gh/`       | GitHub CLI configuration                     | Yes     |
 | `vscode/`   | VS Code settings, keybindings, extensions    | Yes     |
 | `python/`   | uv and pip configuration                     | Yes     |
-| `iterm2/`   | iTerm2 preferences                           | Yes     |
+| `cmux/`     | cmux multiplexer configuration               | Yes     |
+| `ghostty/`  | Ghostty terminal configuration               | Yes     |
+| `glow/`     | Glow markdown viewer configuration           | Yes     |
+| `iterm2/`   | iTerm2 preferences (manual prefs step)       | No      |
 | `jetbrains/`| JetBrains IDE settings                       | Yes     |
-| `homebrew/` | Brewfiles for package management             | No      |
+| `homebrew/` | Brewfile + brew.zsh wrapper function         | Yes     |
 | `macos/`    | macOS system preferences scripts             | No      |
 | `machines/` | Machine-specific overrides                   | No      |
 | `docs/`     | Documentation                                | No      |
