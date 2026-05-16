@@ -1,4 +1,4 @@
-# Open a cmux workspace with claude + terminal | browser + lazygit layout
+# Open a cmux workspace with a two-column layout: claude on the left, plain terminal on the right
 cmux-workspace() {
   local dir="${1:?Usage: cmux-workspace <directory>}"
   dir="${dir%/}"
@@ -24,26 +24,11 @@ cmux-workspace() {
     esac
   fi
 
-  # Create workspace with claude in project dir
-  local ws_output="$(cmux new-workspace --cwd "$dir" --command "claude")"
+  # Two-column layout: claude (left) | plain terminal (right). Both inherit --cwd.
+  local layout='{"direction":"horizontal","split":0.5,"children":[{"pane":{"surfaces":[{"type":"terminal","command":"claude"}]}},{"pane":{"surfaces":[{"type":"terminal"}]}}]}'
+
+  local ws_output="$(cmux new-workspace --cwd "$dir" --layout "$layout")"
   local ws_id="$(echo "$ws_output" | awk '{print $2}')"
 
-  # Rename workspace to title-cased name
   cmux rename-workspace --workspace "$ws_id" "$name"
-
-  # Split right for browser pane (done first to get full-height right column)
-  local browser_output="$(cmux new-pane --type browser --direction right --workspace "$ws_id")"
-  local browser_surface="$(echo "$browser_output" | awk '{print $2}')"
-
-  # Split browser pane down for lazygit terminal (bottom-right)
-  local lg_output="$(cmux new-split down --workspace "$ws_id" --surface "$browser_surface")"
-  local lg_surface="$(echo "$lg_output" | awk '{print $2}')"
-
-  # Launch lazygit in the bottom-right pane
-  cmux send --workspace "$ws_id" --surface "$lg_surface" "cd $dir && lazygit\n"
-
-  # Split claude pane down for terminal (bottom-left)
-  # Use tree to find claude's surface ref (first surface in the workspace)
-  local claude_surface="$(cmux tree --workspace "$ws_id" | grep -o 'surface:[0-9]*' | head -1)"
-  cmux new-split down --workspace "$ws_id" --surface "$claude_surface"
 }

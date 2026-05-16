@@ -19,8 +19,8 @@ background-opacity = 0.89
 cursor-style-blink = false
 
 # Window size
-window-height = 25
-window-width = 80
+# window-height = 25
+# window-width = 80
 
 # macOS option key as alt (required for alt+arrow keybindings)
 macos-option-as-alt = true
@@ -35,8 +35,10 @@ keybind = cmd+backspace=text:\x15
 keybind = delete=text:\x04
 keybind = alt+delete=text:\x1bd
 
-# Copy selected text to clipboard automatically
-copy-on-select = true
+# Copy selected text to clipboard automatically.
+# On macOS `true` targets the (nonexistent) primary selection — use `clipboard`
+# to actually populate the system clipboard.
+copy-on-select = clipboard
 
 # Split styling
 unfocused-split-opacity = 0.7
@@ -44,5 +46,5 @@ unfocused-split-fill = #1e1e2e
 split-divider-color = #45475a
 
 # Optional — uncomment if desired
-# quit-after-last-window-closed = true
+quit-after-last-window-closed = true
 # term = xterm-256color
