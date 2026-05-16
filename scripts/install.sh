@@ -262,6 +262,16 @@ install_gh() {
     fi
 }
 
+install_glow() {
+    info "Setting up Glow..."
+    "$SCRIPT_DIR/stow-link.sh" glow link || return 1
+    if check_command glow; then
+        success "Glow: $(glow --version | head -1)"
+    else
+        warn "glow command not found on PATH."
+    fi
+}
+
 install_nvim() {
     info "Setting up Neovim..."
     local tpl="$DOTFILES_DIR/nvim/.config/nvim/init.vim.template"
@@ -464,6 +474,7 @@ main() {
     local -a components=(
         "git:install_git:Git configuration"
         "gh:install_gh:GitHub CLI configuration"
+        "glow:install_glow:Glow markdown viewer configuration"
         "nvim:install_nvim:Neovim configuration"
         "ssh:install_ssh:SSH configuration"
         "python:install_python:Python configuration"

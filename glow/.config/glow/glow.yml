@@ -1,0 +1,4 @@
+# Wrap markdown at 100 columns. The `glow` zsh alias overrides this with
+# $COLUMNS for interactive use; this value applies to non-interactive
+# invocations (scripts, piped use, unaliased `\glow`).
+width: 100
