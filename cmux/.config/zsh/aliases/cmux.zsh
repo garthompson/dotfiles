@@ -1,2 +1,2 @@
 # cmux aliases
-alias cmnw='cmux-workspace'
+alias cnew='cmux-workspace'

@@ -24,11 +24,14 @@ cmux-workspace() {
     esac
   fi
 
-  # Two-column layout: claude (left) | plain terminal (right). Both inherit --cwd.
-  local layout='{"direction":"horizontal","split":0.5,"children":[{"pane":{"surfaces":[{"type":"terminal","command":"claude"}]}},{"pane":{"surfaces":[{"type":"terminal"}]}}]}'
-
-  local ws_output="$(cmux new-workspace --cwd "$dir" --layout "$layout")"
+  # Create the workspace with claude running in the initial (left) pane,
+  # then split a plain terminal on the right. Workspace-level --command works
+  # reliably; the per-surface `command` inside --layout JSON is silently
+  # dropped in cmux 0.64.6.
+  local ws_output="$(cmux new-workspace --cwd "$dir" --command "claude")"
   local ws_id="$(echo "$ws_output" | awk '{print $2}')"
 
   cmux rename-workspace --workspace "$ws_id" "$name"
+
+  cmux new-pane --type terminal --direction right --workspace "$ws_id" >/dev/null
 }
